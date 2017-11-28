@@ -1,0 +1,8 @@
+#canvasId {
+  border: 1px dashed blue;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
