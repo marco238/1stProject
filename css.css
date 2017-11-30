@@ -6,3 +6,11 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
+#start-button {
+  position: absolute;
+  z-index: 50;
+  background-color: transparent;
+  border: none;
+  letter-spacing: 5px;
+}
