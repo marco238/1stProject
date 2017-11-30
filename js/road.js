@@ -17,14 +17,10 @@ Map.prototype.draw = function() {
         this.x = 0;
       }
 
-      if (this.x < 0) {
-        this.ctx.drawImage(this.sprite, this.sprite.width - this.x, this.y, this.canvas.width, this.canvas.height);
-      } else if (this.x - this.sprite.width > 0) {
-        ctx.drawImage(this.sprite, this.sprite.width * 2 - this.x, this.y, this.canvas.width, this.canvas.height);
-      }
+    this.ctx.drawImage(this.sprite, this.x + this.canvas.width, this.y, this.canvas.width, this.canvas.height);
 
     this.ctx.drawImage(this.sprite, this.x, this.y, this.canvas.width, this.canvas.height);
 
-    this.x -= 0.5;
+    this.x -= speed;
   }
 };

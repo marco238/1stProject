@@ -11,6 +11,7 @@ window.onload = function() {
     this.canvas.width = window.innerWidth - 5;
     this.canvas.height = window.innerHeight - 5.1;
     this.map = new Map('canvasId');
+    this.hero = new Hero('canvasId');
   }
 
   Game.prototype.clear = function() {
@@ -18,11 +19,11 @@ window.onload = function() {
   };
 
   Game.prototype.startGame = function() {
-    this.clear();
     this.intervalId = setInterval(function() {
+      this.clear();
       this.map.draw();
-    }.bind(this), 1000 / 60);
+      this.hero.draw();
+    }.bind(this), 1000 / 120);
   };
-
 
 };
