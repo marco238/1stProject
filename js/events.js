@@ -8,7 +8,7 @@ document.addEventListener("keydown", function(event) {
   }
 
   if (event.keyCode == UP_KEY) {
-
+    jump();
   }
 
   if (event.keyCode == DOWN_KEY) {
@@ -33,3 +33,13 @@ document.addEventListener("keyup", function(event) {
 
   }
 });
+
+jump = function () {
+  ySprite = 1;
+  yCanvasPosition = 230;
+  setTimeout(function(){
+    ySprite = 0;
+    yCanvasPosition = 290;
+    xSprite = 1;
+  }, 600);
+};

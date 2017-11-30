@@ -10,3 +10,7 @@ var RIGHT_KEY = 39;
 var LEFT_KEY = 37;
 var UP_KEY = 38;
 var DOWN_KEY = 40;
+
+var ySprite = 0;
+var xSprite = 1;
+var yCanvasPosition = 290;
