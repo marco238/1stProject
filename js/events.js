@@ -1,14 +1,17 @@
 document.addEventListener("keydown", function(event) {
   if (event.keyCode == RIGHT_KEY) {
-    speed = 2;
+    speed = 3.5;
+    state = 'R';
+    ySprite = 2;
   }
 
   if (event.keyCode == LEFT_KEY) {
-    speed = -2;
+
   }
 
   if (event.keyCode == UP_KEY) {
     jump();
+    state = 'U';
   }
 
   if (event.keyCode == DOWN_KEY) {
@@ -19,6 +22,8 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keyup", function(event) {
   if (event.keyCode == RIGHT_KEY) {
     speed = 0;
+    state = 'C';
+    ySprite = 0;
   }
 
   if (event.keyCode == LEFT_KEY) {
@@ -36,10 +41,7 @@ document.addEventListener("keyup", function(event) {
 
 jump = function () {
   ySprite = 1;
-  yCanvasPosition = 230;
   setTimeout(function(){
     ySprite = 0;
-    yCanvasPosition = 290;
-    xSprite = 1;
-  }, 600);
+  }, 650);
 };

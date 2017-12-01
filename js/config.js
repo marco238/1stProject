@@ -13,4 +13,6 @@ var DOWN_KEY = 40;
 
 var ySprite = 0;
 var xSprite = 1;
-var yCanvasPosition = 290;
+var yCanvasPosition = 565;
+
+var state = 'C';
