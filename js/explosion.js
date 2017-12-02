@@ -2,7 +2,7 @@ function Explosion(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = 900;
-  this.y = 265;
+  this.y = 267;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/explosion.png';
@@ -35,6 +35,7 @@ Explosion.prototype.draw = function() {
   if(this.ySprite < 4){
     if(this.counter % 15 === 0){
       this.xSprite += 1;
+      console.log('hola');
     }
     if(this.counter === 60){
       this.xSprite = 0;

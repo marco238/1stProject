@@ -1,7 +1,7 @@
 function Bomb(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
-  this.x = 950;
+  this.x = 970;
   this.y = 0;
   this.isReady = false;
   this.sprite = new Image();
@@ -23,7 +23,7 @@ Bomb.prototype.draw = function() {
     } else {
       setTimeout(function(){
         this.isExplouded = true;
-      }.bind(this), 1200);
+      }.bind(this), 1450);
       this.explosion.draw();
     }
   }
