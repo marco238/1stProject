@@ -53,4 +53,29 @@ Hero.prototype.draw = function() {
       this.counter = 0;
     }
   }
+
+  if(state === 'A'){
+    if(xSprite < 2){
+      xSprite = 5;
+    }
+    this.counter += 1;
+
+    if (this.counter % 20 === 0) {
+      xSprite -= 1;
+      this.counter = 0;
+    }
+  }
+
+  if(state === 'U'){
+    if(xSprite < 1){
+      xSprite = 4;
+    }
+    this.counter += 1;
+    yCanvasPosition += 1.5 * heroSpeed;
+
+    if (this.counter % 30 === 0) {
+      xSprite -= 1;
+      this.counter = 0;
+    }
+  }
 };
