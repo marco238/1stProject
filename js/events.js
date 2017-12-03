@@ -44,7 +44,7 @@ jump = function () {
     heroSpeed = 1;
   }, 250);
   setTimeout(function(){
-    yCanvasPosition = 290;
+    yCanvasPosition = 565;
     isJumping = false;
     if(isRunning){
       state = 'R';

@@ -13,7 +13,7 @@ window.onload = function() {
     this.map = new Map('canvasId');
     this.hero = new Hero('canvasId');
     this.zeppelin = new Zeppelin('canvasId');
-    this.bomb = new Bomb('canvasId');
+    this.bird = new Bird('canvasId');
   }
 
   Game.prototype.clear = function() {
@@ -24,9 +24,9 @@ window.onload = function() {
     this.intervalId = setInterval(function() {
       this.clear();
       this.map.draw();
+      this.bird.draw();
       this.hero.draw();
       this.zeppelin.draw();
-      this.bomb.draw();
     }.bind(this), 1000 / 120);
   };
 

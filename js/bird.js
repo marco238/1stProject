@@ -1,24 +1,22 @@
-function Explosion(canvas) {
+function Bird(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
-  this.x = 900;
-  this.y = 540;
+  this.x = 2000;
+  this.y = 200;
   this.isReady = false;
   this.sprite = new Image();
-  this.sprite.src = 'img/explosion.png';
+  this.sprite.src = 'img/bird.png';
   this.sprite.onload = (function() {
     this.isReady = true;
   }).bind(this);
   this.sprite.xframes = 5;
-  // this.sprite.xframeIndex = 1;
-  this.sprite.yframes = 3;
-  // this.sprite.yframeIndex = ySprite;
+  this.sprite.yframes = 5;
   this.xSprite = 0;
   this.ySprite = 0;
   this.counter = 0;
 }
 
-Explosion.prototype.draw = function() {
+Bird.prototype.draw = function() {
   if (this.isReady) {
     this.ctx.drawImage(
       this.sprite, // Image
@@ -28,19 +26,23 @@ Explosion.prototype.draw = function() {
       Math.floor(this.sprite.height / this.sprite.yframes), // frame heigth
       this.x, // destination x
       this.y, // destination y
-      Math.floor(this.sprite.width / this.sprite.xframes) + 100, // destination frame width
-      Math.floor(this.sprite.height / this.sprite.yframes) + 100); // destination frame heigth
+      Math.floor(this.sprite.width / this.sprite.xframes) * 0.2, // destination frame width
+      Math.floor(this.sprite.height / this.sprite.yframes) * 0.2); // destination frame heigth
   }
 
-  if(this.ySprite < 4){
-    if(this.counter % 15 === 0){
-      this.xSprite += 1;
+  if(this.ySprite < 4 && this.x > 0){
+    if(this.counter % 5 === 0){
+      this.xSprite += 1;console.log('hola');
     }
-    if(this.counter === 60){
+    if(this.counter === 20){
       this.xSprite = 0;
       this.counter = 0;
       this.ySprite += 1;
     }
     this.counter += 1;
+  } else {
+    this.ySprite = 0;
   }
+
+  this.x -= speed + 2;
 };
