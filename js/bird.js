@@ -1,8 +1,8 @@
 function Bird(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
-  this.x = 2000;
-  this.y = 200;
+  this.x = (Math.random() * 4000) + 2000;
+  this.y = Math.random() * 500;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/bird.png';
@@ -32,7 +32,7 @@ Bird.prototype.draw = function() {
 
   if(this.ySprite < 4 && this.x > 0){
     if(this.counter % 5 === 0){
-      this.xSprite += 1;console.log('hola');
+      this.xSprite += 1;
     }
     if(this.counter === 20){
       this.xSprite = 0;

@@ -1,8 +1,8 @@
 function Explosion(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
-  this.x = 900;
-  this.y = 540;
+  this.x = 1550;
+  this.y = 590;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/explosion.png';
@@ -18,7 +18,7 @@ function Explosion(canvas) {
   this.counter = 0;
 }
 
-Explosion.prototype.draw = function() {
+Explosion.prototype.draw = function(x) {
   if (this.isReady) {
     this.ctx.drawImage(
       this.sprite, // Image
@@ -26,7 +26,7 @@ Explosion.prototype.draw = function() {
       this.ySprite * Math.floor(this.sprite.height / this.sprite.yframes), // source y
       Math.floor(this.sprite.width / this.sprite.xframes), // frame width
       Math.floor(this.sprite.height / this.sprite.yframes), // frame heigth
-      this.x, // destination x
+      x - 30, // destination x
       this.y, // destination y
       Math.floor(this.sprite.width / this.sprite.xframes) + 100, // destination frame width
       Math.floor(this.sprite.height / this.sprite.yframes) + 100); // destination frame heigth
@@ -43,4 +43,5 @@ Explosion.prototype.draw = function() {
     }
     this.counter += 1;
   }
+  this.x -= speed;
 };

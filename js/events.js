@@ -1,13 +1,15 @@
 document.addEventListener("keydown", function(event) {
   if (event.keyCode == RIGHT_KEY) {
-    isRunning = true;
-    speed = 3.5;
-    state = 'R';
-    ySprite = 2;
+    if(!isJumping && !isAttacking){
+      isRunning = true;
+      speed = 3.5;
+      state = 'R';
+      ySprite = 2;
+    }
   }
 
   if (event.keyCode == UP_KEY) {
-    if(!isJumping){
+    if(!isJumping && !isAttacking){
       xSprite = 4;
       jump();
       state = 'U';
@@ -15,7 +17,8 @@ document.addEventListener("keydown", function(event) {
   }
 
   if (event.keyCode == CTRL_KEY) {
-    if(!isAttacking){
+    if(!isAttacking && !isJumping){
+      isAttacking = true;
       xSprite = 5;
       attack();
       state = 'A';
@@ -25,14 +28,12 @@ document.addEventListener("keydown", function(event) {
 
 document.addEventListener("keyup", function(event) {
   if (event.keyCode == RIGHT_KEY) {
-    isRunning = false;
-    speed = 0;
-    state = 'C';
-    ySprite = 0;
-  }
-
-  if (event.keyCode == LEFT_KEY) {
-    speed = 0;
+    if(!isJumping){
+      isRunning = false;
+      speed = 0;
+      state = 'C';
+      ySprite = 0;
+    }
   }
 });
 
@@ -44,7 +45,7 @@ jump = function () {
     heroSpeed = 1;
   }, 250);
   setTimeout(function(){
-    yCanvasPosition = 565;
+    yCanvasPosition = 615;
     isJumping = false;
     if(isRunning){
       state = 'R';
@@ -57,7 +58,7 @@ jump = function () {
 };
 
 attack = function () {
-  isAttacking = true;
+
   ySprite = 3;
   if(isRunning){
     speed = 3.5;
