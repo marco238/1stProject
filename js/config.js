@@ -21,3 +21,4 @@ var isJumping = false;
 var isAttacking = false;
 
 var state = 'C';
+var lastZeppelinX = 0;

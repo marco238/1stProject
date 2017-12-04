@@ -1,7 +1,7 @@
 function Explosion(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
-  this.x = 1550;
+  this.x = 1450;
   this.y = 590;
   this.isReady = false;
   this.sprite = new Image();

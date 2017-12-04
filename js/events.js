@@ -40,9 +40,9 @@ document.addEventListener("keyup", function(event) {
 jump = function () {
   isJumping = true;
   ySprite = 1;
-  heroSpeed = -2.5;
+  heroSpeed = -4.5;
   setTimeout(function(){
-    heroSpeed = 1;
+    heroSpeed = 2.6;
   }, 250);
   setTimeout(function(){
     yCanvasPosition = 615;
