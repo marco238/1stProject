@@ -2,7 +2,7 @@ function Road(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = 0;
-  this.y = 50;
+  this.y = 30;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/map-ground.png';

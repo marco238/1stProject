@@ -43,7 +43,7 @@ Hero.prototype.draw = function() {
   }
 
   if(state === 'R'){
-    if(xSprite < 0){
+    if(xSprite < 1){
       xSprite = 5;
     }
     this.counter += 1;
@@ -78,4 +78,10 @@ Hero.prototype.draw = function() {
       this.counter = 0;
     }
   }
+
+  // for(var i = 0; i < hippie.length; i++){
+  //   if(hippie[i].x == this.x){
+  //     hippie[i].ySprite = 2;
+  //   }
+  // }
 };

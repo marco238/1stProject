@@ -2,7 +2,7 @@ function Bird(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = (Math.random() * 4000) + 2000;
-  this.y = Math.random() * 500;
+  this.y = Math.random() * 300;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/bird.png';

@@ -1,7 +1,7 @@
 function Bomb(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
-  this.x = 1600;
+  this.x = 1000;
   this.y = 100;
   this.isReady = false;
   this.sprite = new Image();
@@ -10,14 +10,14 @@ function Bomb(canvas) {
     this.isReady = true;
   }).bind(this);
   this.speed = 1;
-  this.explosion = new Explosion('canvasId');
+  this.explosion = new Explosion('canvasId', this.x);
   this.isExplouded = false;
 }
 
 Bomb.prototype.draw = function() {
   if (this.isReady && !this.isExplouded) {
     this.ctx.drawImage(this.sprite, this.x, this.y, this.sprite.width * 0.2, this.sprite.height * 0.2);
-    if(this.y < 675){
+    if(this.y < 440){
       this.speed *= 1.02;
       this.y += this.speed;
     } else {

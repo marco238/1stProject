@@ -2,7 +2,7 @@ function Hippie(canvas, ySprt) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = (Math.random() * 1000) + this.canvas.width;
-  this.y = 645;
+  this.y = 355;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/hippie_sprites2.png';
@@ -26,8 +26,8 @@ Hippie.prototype.draw = function() {
       Math.floor(this.sprite.height / this.sprite.yframes), // frame heigth
       this.x, // destination x
       this.y, // destination y
-      Math.floor(this.sprite.width / this.sprite.xframes) * 0.7, // destination frame width
-      Math.floor(this.sprite.height / this.sprite.yframes) * 0.7); // destination frame heigth
+      Math.floor(this.sprite.width / this.sprite.xframes) * 0.65, // destination frame width
+      Math.floor(this.sprite.height / this.sprite.yframes) * 0.65); // destination frame heigth
   }
 
 if (this.counter % 20 === 0) {
