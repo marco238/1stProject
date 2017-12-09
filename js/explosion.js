@@ -2,7 +2,7 @@ function Explosion(canvas, x) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = x - 430;
-  this.y = 297;
+  this.y = window.innerHeight * 0.59;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/explosion.png';

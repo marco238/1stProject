@@ -22,7 +22,7 @@ World.prototype.draw = function() {
     this.ctx.drawImage(this.sprite, this.x + this.canvas.width, this.y, this.canvas.width, this.canvas.height);
 
     this.ctx.drawImage(this.sprite, this.x, this.y, this.canvas.width, this.canvas.height);
-    this.ctx.drawImage(this.sunSprite, this.canvas.width * 4/6, this.canvas.height * -3/20, this.sunSprite.width * 0.5, this.sunSprite.height * 0.5);
+    this.ctx.drawImage(this.sunSprite, this.canvas.width * 4/6, this.canvas.height * -2/20, this.sunSprite.width * 0.5, this.sunSprite.height * 0.5);
 
     this.x -= speed/20;
   }

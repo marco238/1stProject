@@ -2,7 +2,7 @@ function Hippie(canvas, ySprt) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = (Math.random() * 1000) + this.canvas.width;
-  this.y = 355;
+  this.y = window.innerHeight * 0.65;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/hippie_sprites2.png';

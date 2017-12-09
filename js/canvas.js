@@ -16,9 +16,19 @@ window.onload = function() {
     this.world = new World('canvasId');
     this.road = new Road('canvasId');
     this.hero = new Hero('canvasId');
+    this.life = [
+      new Life('canvasId'),
+      new Life('canvasId'),
+      new Life('canvasId'),
+      new Life('canvasId'),
+      new Life('canvasId')
+    ];
     this.zeppelin = [];
     this.bird = [];
     this.hippie = [];
+    this.theme = new Audio();
+    this.theme.src = 'sound/Contra.mp3';
+    this.theme.loop = true;
   }
 
   Game.prototype.clear = function() {
@@ -44,6 +54,7 @@ window.onload = function() {
   };
 
   Game.prototype.startGame = function() {
+    this.theme.play();
     this.intervalId = setInterval(function() {
       this.clear();
       this.world.draw();
@@ -62,7 +73,13 @@ window.onload = function() {
       for(var k = 0; k < this.hippie.length; k++){
         if(this.hippie[k].x > -50){
           this.hippie[k].draw();
+          if(this.hero.x == this.hippie[k].x){
+            this.life.shift();
+          }
         }
+      }
+      for(var h = 0; h < this.life.length; h++){
+        this.life[h].draw(h);
       }
     }.bind(this), 1000 / 120);
   };

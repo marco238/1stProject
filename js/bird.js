@@ -2,7 +2,7 @@ function Bird(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext('2d');
   this.x = (Math.random() * 4000) + 2000;
-  this.y = Math.random() * 300;
+  this.y = Math.random() * window.innerHeight * 0.5;
   this.isReady = false;
   this.sprite = new Image();
   this.sprite.src = 'img/bird.png';
@@ -14,6 +14,8 @@ function Bird(canvas) {
   this.xSprite = 0;
   this.ySprite = 0;
   this.counter = 0;
+  this.sound = new Audio();
+  this.sound.src = 'sound/bird.mp3';
 }
 
 Bird.prototype.draw = function() {
@@ -42,6 +44,10 @@ Bird.prototype.draw = function() {
     this.counter += 1;
   } else {
     this.ySprite = 0;
+  }
+
+  if(this.x < 1000 && this.x > 900){
+    this.sound.play();
   }
 
   this.x -= speed + 2;

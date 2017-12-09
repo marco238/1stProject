@@ -45,7 +45,7 @@ jump = function () {
     heroSpeed = 2.6;
   }, 250);
   setTimeout(function(){
-    yCanvasPosition = 320;
+    yCanvasPosition = window.innerHeight * 0.61;
     isJumping = false;
     if(isRunning){
       state = 'R';
@@ -58,7 +58,7 @@ jump = function () {
 };
 
 attack = function () {
-
+  punch.play();
   ySprite = 3;
   if(isRunning){
     speed = 3.5;

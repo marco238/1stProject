@@ -5,7 +5,7 @@ function Hero(canvas) {
   this.y = yCanvasPosition;
   this.isReady = false;
   this.sprite = new Image();
-  this.sprite.src = 'img/hero.png';
+  this.sprite.src = 'img/hero2.png';
   this.sprite.onload = (function() {
     this.isReady = true;
   }).bind(this);
@@ -14,6 +14,7 @@ function Hero(canvas) {
   this.sprite.yframes = 4;
   // this.sprite.yframeIndex = ySprite;
   this.counter = 0;
+  this.life = [5];
 }
 
 Hero.prototype.draw = function() {

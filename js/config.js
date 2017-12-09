@@ -6,6 +6,9 @@
 
 var speed = 0;
 var heroSpeed = 1;
+var life = 5;
+var punch = new Audio();
+punch.src = 'sound/Punch.mp3';
 
 var RIGHT_KEY = 39;
 var LEFT_KEY = 37;
@@ -15,7 +18,7 @@ var CTRL_KEY = 17;
 
 var ySprite = 0;
 var xSprite = 1;
-var yCanvasPosition = 320;
+var yCanvasPosition = window.innerHeight * 0.61;
 var isRunning = false;
 var isJumping = false;
 var isAttacking = false;
