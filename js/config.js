@@ -18,7 +18,8 @@ var CTRL_KEY = 17;
 
 var ySprite = 0;
 var xSprite = 1;
-var yCanvasPosition = window.innerHeight * 0.61;
+// var yCanvasPosition = window.innerHeight * 0.57;
+var yCanvasPosition = 320;
 var isRunning = false;
 var isJumping = false;
 var isAttacking = false;

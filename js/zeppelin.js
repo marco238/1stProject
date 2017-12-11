@@ -18,7 +18,7 @@ Zeppelin.prototype.draw = function() {
     this.ctx.drawImage(this.sprite, this.x, this.y, this.sprite.width * 0.2, this.sprite.height * 0.2);
   }
   this.x -= speed + 0.2;
-  if (this.x < window.innerWidth * 0.5) {
+  if (this.x < /*window.innerWidth * 0.5*/900) {
     this.bomb.draw();
   }
 };

@@ -1,22 +1,22 @@
-function Hippie(canvas, ySprt) {
-  this.canvas = document.getElementById(canvas);
+function Blood(x, y) {
+  this.canvas = document.getElementById('canvasId');
   this.ctx = this.canvas.getContext('2d');
-  this.x = (Math.random() * 1000) + this.canvas.width;
-  this.y = /*window.innerHeight * 0.65*/360;
+  this.x = x;
+  this.y = y;
   this.isReady = false;
   this.sprite = new Image();
-  this.sprite.src = 'img/hippie_sprites2.png';
+  this.sprite.src = 'img/blood.png';
   this.sprite.onload = (function() {
     this.isReady = true;
   }).bind(this);
-  this.sprite.xframes = 8;
-  this.sprite.yframes = 2;
+  this.sprite.xframes = 3;
+  this.sprite.yframes = 3;
   this.xSprite = 0;
-  this.ySprite = ySprt;
+  this.ySprite = 0;
   this.counter = 0;
 }
 
-Hippie.prototype.draw = function() {
+Blood.prototype.draw = function() {
   if (this.isReady) {
     this.ctx.drawImage(
       this.sprite, // Image
@@ -28,17 +28,20 @@ Hippie.prototype.draw = function() {
       this.y, // destination y
       Math.floor(this.sprite.width / this.sprite.xframes) * 0.65, // destination frame width
       Math.floor(this.sprite.height / this.sprite.yframes) * 0.65); // destination frame heigth
-  }
+  }debugger;
 
-if (this.counter % 20 === 0) {
-  if(this.xSprite > 6){
+  if (this.ySprite < 3) {
+  if (this.counter % 10 === 0) {
+    this.xSprite += 1;
+  }
+  if (this.counter === 15) {
     this.xSprite = 0;
+    this.counter = 0;
+    this.ySprite += 1;
   }
-  this.xSprite += 1;
-  this.counter = 0;
+  this.counter += 1;
+} else {
+  this.ySprite = 0;
 }
-
-this.counter += 1;
-
 this.x -= speed + 0.8;
 };

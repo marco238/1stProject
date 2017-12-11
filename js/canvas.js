@@ -73,8 +73,17 @@ window.onload = function() {
       for(var k = 0; k < this.hippie.length; k++){
         if(this.hippie[k].x > -50){
           this.hippie[k].draw();
-          if(this.hero.x == this.hippie[k].x){
-            this.life.shift();
+          if((this.hero.x + 80) > this.hippie[k].x && this.hippie[k].x > (this.hero.x + 79.3) && !isAttacking){
+            this.life.pop();
+          }
+          if((this.hero.x + 80) > this.hippie[k].x && this.hippie[k].x > (this.hero.x + 78.2) && !isAttacking && isRunning){
+            this.life.pop();
+          }
+          if((this.hero.x + 110) > this.hippie[k].x && (this.hippie[k].x - 50) > this.hero.x && isAttacking){
+            this.hippie.splice(this.hippie.indexOf(this.hippie[k]), 1);
+          }
+          if((this.hero.x + 110) > this.hippie[k].x && (this.hippie[k].x - 50) > this.hero.x && isAttacking && isRunning){
+            this.hippie.splice(this.hippie.indexOf(this.hippie[k]), 1);
           }
         }
       }

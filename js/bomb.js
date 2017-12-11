@@ -19,7 +19,7 @@ function Bomb(canvas) {
 Bomb.prototype.draw = function() {
   if (this.isReady && !this.isExplouded) {
     this.ctx.drawImage(this.sprite, this.x, this.y, this.sprite.width * 0.2, this.sprite.height * 0.2);
-    if(this.y < window.innerHeight * 0.73){
+    if(this.y < /*window.innerHeight * 0.73*/430){
       this.speed *= 1.02;
       this.y += this.speed;
     } else {
