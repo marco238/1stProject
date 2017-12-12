@@ -26,6 +26,7 @@ window.onload = function() {
     this.zeppelin = [];
     this.bird = [];
     this.hippie = [];
+    this.blood = new Blood();
     this.theme = new Audio();
     this.theme.src = 'sound/Contra.mp3';
     this.theme.loop = true;
@@ -50,6 +51,7 @@ window.onload = function() {
   Game.prototype.addHippie = function() {
     setInterval(function() {
       this.hippie.push(new Hippie('canvasId', Math.floor(Math.random() * 3)));
+      // this.blood.push(new Blood());
     }.bind(this), 5 * 1000);
   };
 
@@ -59,6 +61,7 @@ window.onload = function() {
       this.clear();
       this.world.draw();
       this.road.draw();
+      this.blood.draw();
       for(var i = 0; i < this.bird.length; i++){
         if(this.bird[i].x > -50){
           this.bird[i].draw();
@@ -80,9 +83,11 @@ window.onload = function() {
             this.life.pop();
           }
           if((this.hero.x + 110) > this.hippie[k].x && (this.hippie[k].x - 50) > this.hero.x && isAttacking){
+            this.blood.draw(this.hippie[k].x, this.hippie[k].y);
             this.hippie.splice(this.hippie.indexOf(this.hippie[k]), 1);
           }
           if((this.hero.x + 110) > this.hippie[k].x && (this.hippie[k].x - 50) > this.hero.x && isAttacking && isRunning){
+            this.blood.draw(this.hippie[k].x, this.hippie[k].y);
             this.hippie.splice(this.hippie.indexOf(this.hippie[k]), 1);
           }
         }
